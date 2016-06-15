@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>LetterAvatar by ksz2k</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">LetterAvatar</h1>
+      <h2 class="project-tagline">Gem for creating letter avatar from user&#39;s name (or any other string :-) ).</h2>
+      <a href="https://github.com/ksz2k/letter_avatar" class="btn">View on GitHub</a>
+      <a href="https://github.com/ksz2k/letter_avatar/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ksz2k/letter_avatar/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="letteravatar" class="anchor" href="#letteravatar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LetterAvatar</h1>
+
+<p>Gem for creating letter avatar from user's name (or any other strong / character).</p>
+
+<p>Code extracted from <a href="https://www.discourse.org/">discourse</a> source (thanks guys!) - I needed this functionality in three projects, so here's the gem! :-)</p>
+
+<p><a href="https://codeclimate.com/github/ksz2k/letter_avatar"><img src="https://codeclimate.com/github/ksz2k/letter_avatar/badges/gpa.svg" alt="Code Climate"></a></p>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<h4>
+<a id="googles-inbox-palette" class="anchor" href="#googles-inbox-palette" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Google's Inbox Palette</h4>
+
+<p><img src="https://cloud.githubusercontent.com/assets/5518/13031513/43eefa76-d30b-11e5-8f06-85f8eb2a4fb6.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031514/43ef6d8a-d30b-11e5-9fbc-38ae526b56b3.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031517/43f0da12-d30b-11e5-8fef-6c7daf235a54.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031515/43f0568c-d30b-11e5-95c5-1653361d4443.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031512/43eebcc8-d30b-11e5-9f95-0093bfadd182.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031516/43f0d0bc-d30b-11e5-8822-f01a6a138ff8.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031519/44382430-d30b-11e5-96e4-bcd7ce5eb155.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031518/44378d04-d30b-11e5-9400-55ff46b94cbe.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031521/443a03cc-d30b-11e5-8467-9592e9dbb2ae.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031523/443badc6-d30b-11e5-9d72-45613018cab4.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031520/44394e14-d30b-11e5-966c-2eada89295c9.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031522/443a71fe-d30b-11e5-88f4-37d1fd220abb.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031525/44752b1e-d30b-11e5-8290-ed8888055e64.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031524/4471cef6-d30b-11e5-9f4c-004f993dd27b.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031526/4475a990-d30b-11e5-8be3-c8f4482dee03.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031527/44772482-d30b-11e5-92f0-b9190c312d70.png" width="60"> <img src="https://cloud.githubusercontent.com/assets/5518/13031528/447804ce-d30b-11e5-8002-9424d5474ddb.png" width="60"></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>System requirements</p>
+
+<div class="highlight highlight-source-shell"><pre>$ sudo apt-get install -y imagemagick</pre></div>
+
+<p>Mac OS X</p>
+
+<div class="highlight highlight-source-shell"><pre>$ brew install imagemagick ghostscript</pre></div>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>letter_avatar<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ bundle</pre></div>
+
+<p>Or install it yourself as:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ gem install letter_avatar</pre></div>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c1">LetterAvatar</span>.setup <span class="pl-k">do </span>|<span class="pl-smi">config</span>|
+  config.cache_base_path   <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>public/system/lets<span class="pl-pds">'</span></span> <span class="pl-c"># default is 'public/system'</span>
+  config.colors_palette    <span class="pl-k">=</span> <span class="pl-c1">:iwanthue</span>            <span class="pl-c"># default is :google</span>
+  config.weight            <span class="pl-k">=</span> <span class="pl-c1">500</span>                  <span class="pl-c"># default is 300</span>
+  config.annotate_position <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>-0+10<span class="pl-pds">'</span></span>              <span class="pl-c"># default is -0+5</span>
+<span class="pl-k">end</span></pre></div>
+
+<h4>
+<a id="color-palette" class="anchor" href="#color-palette" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Color palette</h4>
+
+<p>We have two color palettes implemented: <code>iwanthue</code> and <code>google</code>.</p>
+
+<p>Each of them have different colors, but the <code>iwanthue</code> also differently calculates the color for specified username.</p>
+
+<p>The <code>google</code> selected will generate the same avatar for both, "Krzysiek" and "ksz2k" usernames given (both of them starts with letter "k"), but <code>iwanthue</code> will calculate it's md5 and then selects color, so there's huge chance that these usernames get different colors.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c1">LetterAvatar</span>.generate <span class="pl-s"><span class="pl-pds">'</span>ksz2k<span class="pl-pds">'</span></span>, <span class="pl-c1">200</span>
+=&gt; <span class="pl-s"><span class="pl-pds">"</span>public/system/letter_avatars/2/K/87_178_230/200.png<span class="pl-pds">"</span></span></pre></div>
+
+<p>There's also helper for this. To use it, you need:</p>
+
+<ul>
+<li>
+<p>in your helper (eg. <code>ApplicationHelper</code>) or controller:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">include</span> <span class="pl-c1">LetterAvatar</span>::<span class="pl-c1">AvatarHelper</span></pre></div>
+</li>
+<li>
+<p>and in your view:</p>
+
+<div class="highlight highlight-source-ruby"><pre>letter_avatar_for(<span class="pl-s"><span class="pl-pds">'</span>ksz2k<span class="pl-pds">'</span></span>, <span class="pl-c1">200</span>)
+=&gt; <span class="pl-s"><span class="pl-pds">"</span>public/system/letter_avatars/2/K/87_178_230/200.png<span class="pl-pds">"</span></span>
+<span class="pl-c"># or</span>
+letter_avatar_url(<span class="pl-s"><span class="pl-pds">'</span>ksz2k<span class="pl-pds">'</span></span>, <span class="pl-c1">200</span>)
+=&gt; <span class="pl-s"><span class="pl-pds">"</span>/system/letter_avatars/2/K/87_178_230/200.png<span class="pl-pds">"</span></span>
+<span class="pl-c"># or even</span>
+letter_avatar_tag(<span class="pl-s"><span class="pl-pds">'</span>ksz2k<span class="pl-pds">'</span></span>, <span class="pl-c1">200</span>, <span class="pl-c1">class:</span> <span class="pl-s"><span class="pl-pds">'</span>av<span class="pl-pds">'</span></span>)
+=&gt; <span class="pl-s"><span class="pl-pds">"</span>&lt;img class=<span class="pl-cce">\"</span>av<span class="pl-cce">\"</span> alt=<span class="pl-cce">\"</span>ksz2k<span class="pl-cce">\"</span> src=<span class="pl-cce">\"</span>/system/letter_avatars/2/K/87_178_230/200.png<span class="pl-cce">\"</span> /&gt;<span class="pl-pds">"</span></span></pre></div>
+</li>
+</ul>
+
+<h3>
+<a id="way-to-support-non-a-z0-9-charsets" class="anchor" href="#way-to-support-non-a-z0-9-charsets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Way to support non [a-z0-9] charsets</h3>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">class</span> <span class="pl-en">User</span>
+  <span class="pl-k">def</span> <span class="pl-en">username_for_avatar</span>
+    <span class="pl-c"># Translate Chinese hanzi to pinyin</span>
+    <span class="pl-c"># https://github.com/flyerhzm/chinese_pinyin</span>
+    <span class="pl-c1">Pinyin</span>.t(<span class="pl-v">self</span>.username)
+  <span class="pl-k">end</span>
+<span class="pl-k">end</span></pre></div>
+
+<p>Then you can get right avatar now:</p>
+
+<div class="highlight highlight-source-ruby"><pre>letter_avatar_for(user.username_for_avatar, <span class="pl-c1">200</span>)
+<span class="pl-c"># or</span>
+letter_avatar_tag(user.username_for_avatar, <span class="pl-c1">200</span>, <span class="pl-c1">class:</span> <span class="pl-s"><span class="pl-pds">'</span>av<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ksz2k/letter_avatar">LetterAvatar</a> is maintained by <a href="https://github.com/ksz2k">ksz2k</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
